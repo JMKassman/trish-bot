@@ -12,7 +12,7 @@ fs.readFile('./count', function(err, data) {
     return console.log(err);
   }
   count = data;
-  console.log(data);
+  console.log(count);
 });
 
 function writeCount(count) {
@@ -24,11 +24,12 @@ function writeCount(count) {
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^LMAO$/im;
+      botRegex = /^LMAO$/im,
+      trishUserID = 49924159;
 
-  console.log(request);
+  //console.log(request);
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && botRegex.test(request.text) && (request.sender_id == trishUserID)) {
     this.res.writeHead(200);
     count++;
     postMessage();
