@@ -1,6 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var counter = require('count');
 var botID = process.env.BOT_ID;
 var fs = require('fs');
 
