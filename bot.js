@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var botID = process.env.BOT_ID;
 var fs = require('fs');
 
-var count;
+var count = 0;
 var path = './count.txt';
 
 console.log(botID);
