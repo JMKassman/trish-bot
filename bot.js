@@ -104,7 +104,7 @@ function postMessage() {
 function postHelpMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "This bot counts the number of times Trish says lmao. Send \"/trish lmao count\" to see the count";
+  botResponse = "This bot counts the number of times Trish says lmao. Send \"/trish lmao count\" to see the count. Sending \"/test\" is pointless because it only adds to log for me to see";
 
   options = {
     hostname: 'api.groupme.com',
