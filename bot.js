@@ -35,7 +35,7 @@ function respond() {
     writeCount(count);
     this.res.end();
   } else {
-    console.log("don't care \"" + uest.text + "\"");
+    console.log("don't care \"" + request.text + "\"");
     this.res.writeHead(200);
     this.res.end();
   }
