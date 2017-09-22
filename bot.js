@@ -20,22 +20,34 @@ function writeCount(count) {
     if(err) return console.log(err);
     console.log(count + " > count");
   });
+  fs.readFile('./count', function(err, data) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log(data);
+  });
 }
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /LMAO/ig,
+      botRegex1 = /LMAO/ig,
+      botRegex2 = /^\/trish  lmao count$/igm,
       trishUserID = 49924159;
 
   //console.log(request);
 
-  if(request.text && botRegex.test(request.text) && (request.sender_id == trishUserID)) {
+  if(request.text && botRegex1.test(request.text) && (request.sender_id == trishUserID)) {
     this.res.writeHead(200);
     count++;
-    postMessage();
     writeCount(count);
     this.res.end();
-  } else {
+  }
+  else if(request.text && botRegex2.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage();
+    this.res.end();
+  }
+  else {
     console.log("don't care \"" + request.text + "\"");
     this.res.writeHead(200);
     this.res.end();
@@ -76,6 +88,5 @@ function postMessage() {
   });
   botReq.end(JSON.stringify(body));
 }
-
 
 exports.respond = respond;
