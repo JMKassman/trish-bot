@@ -13,6 +13,13 @@ fs.readFile('./count', function(err, data) {
   console.log(data);
 });
 
+function writeCount(count) {
+  fs.writeFile('./count', count, function(err) {
+    if(err) return console.log(err);
+    console.log(count + " > count");
+  });
+}
+
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^Trish\+\+$/im;
@@ -21,6 +28,7 @@ function respond() {
     this.res.writeHead(200);
     count++;
     postMessage();
+    writeCount(count);
     this.res.end();
   } else {
     console.log("don't care " + request.text);
