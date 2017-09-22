@@ -1,18 +1,30 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-
+var counter = require('count');
 var botID = process.env.BOT_ID;
+var fs = require('fs');
+
+var count;
+
+fs.readFile('./count', function(err, data) {
+  if(err) {
+    return console.log(err);
+  }
+  count = data;
+  console.log(data);
+});
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy$/;
+      botRegex = /^Trish\+\+$/im;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
+    count++;
     postMessage();
     this.res.end();
   } else {
-    console.log("don't care");
+    console.log("don't care" + request.text);
     this.res.writeHead(200);
     this.res.end();
   }
@@ -21,7 +33,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = "The Trish LMAO count is now at " + str(count);
 
   options = {
     hostname: 'api.groupme.com',
