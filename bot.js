@@ -16,7 +16,7 @@ fs.readFile(path, 'utf8', function(err, data) {
 });
 
 function writeCount(count) {
-  fs.writeFile(path, 'utf8', count, function(err) {
+  fs.writeFile(path, count, 'utf8', function(err) {
     if(err) return console.log(err);
     console.log(count + " > count");
   });
@@ -33,6 +33,7 @@ function respond() {
       botRegex1 = /LMAO/ig,
       botRegex2 = /^\/trish lmao count$/igm,
       botRegex3 = /^\/help$/igm,
+      botRegex4 = /^\/test$/igm,
       trishUserID = 49924159;
 
   //console.log(request);
@@ -51,6 +52,11 @@ function respond() {
   else if(request.text && botRegex3.test(request.text)) {
     this.res.writeHead(200);
     postHelpMessage();
+    this.res.end();
+  }
+  else if(request.text && botRegex4.test(request.text)) {
+    this.res.writeHead(200);
+    writeCount(count);
     this.res.end();
   }
   else {
