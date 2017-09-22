@@ -147,3 +147,7 @@ Then navigate to `http://127.0.0.1:5000/` in a browser.
 
 ## All done! Go play around and make the bot your own.
 
+## My additions
+base code pulled from [here](https://github.com/groupme/bot-tutorial-nodejs)
+updated code to change trigger phrase and message sent
+
