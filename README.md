@@ -1,4 +1,19 @@
-# Sample GroupMe NodeJS Callback Bot
+# Trish lmao counter groupme bot
+## My additions
+base code pulled from [here](https://github.com/groupme/bot-tutorial-nodejs)
+updated code to change trigger phrase and message sent
+This bot now monitors for Trish to say lmao and increments a counter when he does
+There are a few commands that anyone can run detailed below
+
+## commands
+'/help' causes the bot to send a help message detailing the commands that can be sent
+/trish lmao count' causes the bot to send the current count
+'/test' is pointless for anyone but me to run. It sends some debug info to the console to I can try to fix any errors
+
+
+
+# og readme from base code
+## Sample GroupMe NodeJS Callback Bot
 
 ## Introduction
 
@@ -146,8 +161,3 @@ Then navigate to `http://127.0.0.1:5000/` in a browser.
 ![Local bot](http://i.groupme.com/502x133.png.f06c630467954f5dab4c742dc67b71bf)
 
 ## All done! Go play around and make the bot your own.
-
-## My additions
-base code pulled from [here](https://github.com/groupme/bot-tutorial-nodejs)
-updated code to change trigger phrase and message sent
-
