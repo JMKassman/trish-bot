@@ -24,7 +24,7 @@ function writeCount(count) {
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^LMAO$/im,
+      botRegex = /LMAO/ig,
       trishUserID = 49924159;
 
   //console.log(request);
