@@ -24,7 +24,9 @@ function writeCount(count) {
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^Trish\+\+$/im;
+      botRegex = /^LMAO$/im;
+
+  console.log(request);
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -33,7 +35,7 @@ function respond() {
     writeCount(count);
     this.res.end();
   } else {
-    console.log("don't care " + request.text);
+    console.log("don't care \"" + uest.text + "\"");
     this.res.writeHead(200);
     this.res.end();
   }
