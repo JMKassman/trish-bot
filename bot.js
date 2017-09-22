@@ -5,6 +5,8 @@ var fs = require('fs');
 
 var count;
 
+console.log(botID);
+
 fs.readFile('./count', function(err, data) {
   if(err) {
     return console.log(err);
