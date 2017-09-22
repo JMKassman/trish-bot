@@ -23,7 +23,7 @@ function respond() {
     postMessage();
     this.res.end();
   } else {
-    console.log("don't care" + request.text);
+    console.log("don't care " + request.text);
     this.res.writeHead(200);
     this.res.end();
   }
@@ -32,7 +32,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "The Trish LMAO count is now at " + str(count);
+  botResponse = "The Trish LMAO count is now at " + count;
 
   options = {
     hostname: 'api.groupme.com',
